@@ -1,211 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>WeWorld Day | Grand Launching Ceremony</title>
+<meta charset="UTF-8">
+<title>WeWorld Day | Registration</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Favicon -->
-  <link rel="icon" href="png.png" type="image/png">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <style>
-    body
-    <h1 style="color:red">PHOTO VERSION ACTIVE</h1>
-
-    {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #1d2671, #c33764);
-      margin: 0;
-      padding: 0;
-    }
-
-    .container {
-      max-width: 520px;
-      background: #fff;
-      margin: 30px auto;
-      padding: 25px;
-      border-radius: 12px;
-      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-    }
-
-    .logo {
-      text-align: center;
-    }
-
-    .logo img {
-      max-width: 120px;
-      margin-bottom: 10px;
-    }
-
-    h1 {
-      text-align: center;
-      color: #c3a10b;
-      margin-bottom: 5px;
-    }
-
-    h2 {
-      text-align: center;
-      font-size: 18px;
-      margin-top: 0;
-      color: #444;
-    }
-
-    .event-info {
-      text-align: center;
-      margin-bottom: 20px;
-      font-size: 14px;
-      color: #333;
-    }
-
-    label {
-      font-weight: bold;
-      margin-top: 10px;
-      display: block;
-    }
-
-    input, select {
-      width: 100%;
-      padding: 10px;
-      margin-top: 5px;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-      font-size: 14px;
-    }
-
-    button {
-      width: 100%;
-      margin-top: 20px;
-      padding: 12px;
-      background: #1d2671;
-      color: #fff;
-      border: none;
-      border-radius: 8px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background: #c33764;
-    }
-
-    .success {
-      text-align: center;
-      font-weight: bold;
-      margin-top: 15px;
-    }
-  </style>
+<style>
+body{
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg,#1d2671,#c33764);
+}
+.container{
+  max-width:520px;
+  background:#fff;
+  margin:30px auto;
+  padding:25px;
+  border-radius:12px;
+}
+label{font-weight:bold;margin-top:10px;display:block}
+input,select{
+  width:100%;
+  padding:10px;
+  margin-top:5px;
+}
+button{
+  width:100%;
+  padding:12px;
+  background:#1d2671;
+  color:#fff;
+  border:none;
+  border-radius:8px;
+  margin-top:20px;
+}
+.success{color:green;text-align:center;margin-top:10px}
+.error{color:red;text-align:center;margin-top:10px}
+</style>
 </head>
 
 <body>
 
+<h1 style="color:red;text-align:center">PHOTO VERSION ACTIVE</h1>
+
 <div class="container">
+<form id="guestForm" enctype="multipart/form-data">
 
-  <div class="logo">
-    <img src="logo.png.png" alt="WeWorld Logo">
-  </div>
+<label>Full Name *</label>
+<input type="text" name="fullName" required>
 
-  <h1>WeWorld Marketing Pvt. Ltd.</h1>
-  <h2>Grand Launching Ceremony</h2>
+<label>Gender *</label>
+<select name="gender" required>
+  <option value="">Select</option>
+  <option>Male</option>
+  <option>Female</option>
+</select>
 
-  <div class="event-info">
-    <h3>WeWorld Day</h3>
-    10th February, 2026<br>
-    Venue - Mohit Moitra Mancha Paikpara<br>
-    Kolkata - 700002<br>
-    Time: 10:30 AM to 02:30 PM
-  </div>
+<label>Personal Rank *</label>
+<select name="personalRank" required>
+  <option value="">Select</option>
+  <option>Ignite</option>
+  <option>Promoter</option>
+  <option>Champion</option>
+  <option>Ambassador</option>
+  <option>Entrepreneur</option>
+  <option>Grand Master</option>
+  <option>Legend</option>
+</select>
 
-  <!-- FORM -->
-  <form id="guestForm">
+<label>Address *</label>
+<input type="text" name="address" required>
 
-    <label>Full Name *</label>
-    <input type="text" name="fullName" required>
+<label>WBO ID *</label>
+<input type="text" name="wboId" required>
 
-    <label>Gender *</label>
-    <select name="gender" required>
-      <option value="">Select</option>
-      <option>Male</option>
-      <option>Female</option>
-      <option>Other</option>
-    </select>
+<label>Upline Name *</label>
+<input type="text" name="uplineName" required>
 
-    <label>Personal Rank *</label>
-    <select name="personalRank" required>
-      <option value="">Select</option>
-      <option>Ignite</option>
-      <option>Promoter</option>
-      <option>Champion</option>
-      <option>Ambassador</option>
-      <option>Entrepreneur</option>
-      <option>Grand Master</option>
-      <option>Legend</option>
-    </select>
+<label>City / State *</label>
+<input type="text" name="cityState" required>
 
-    <label>Address *</label>
-    <input type="text" name="address" required>
+<label>Ticket Product *</label>
+<select name="ticketProduct" required>
+<option value="">Select</option>
+<option>1 WePower</option>
+</select>
 
-    <label>WBO ID *</label>
-    <input type="text" name="WBO ID" required>
+<label>Mobile *</label>
+<input type="tel" name="mobile" required>
 
-    <label>Upline Name *</label>
-    <input type="text" name="Upline name" required>
+<label>Upload Photo *</label>
+<input type="file" name="photo" accept="image/*" required>
 
-    <label>City / State *</label>
-    <input type="text" name="cityState" required>
+<button type="submit">Submit</button>
 
-    <label>Ticket Product *</label>
-    <select name="ticketProduct" required>
-      <option value="">Select</option>
-      <option>1 WePower</option>
-    </select>
+<div id="msg"></div>
 
-    <label>Mobile Number</label>
-    <input type="tel" name="mobile">
-
-    <label>Upload Photo *</label>
-    <input type="file" id="photo" accept="image/*" required>
-    <input type="hidden" name="photoBase64" id="photoBase64">
-
-    <button type="submit">Submit</button>
-
-    <div class="success" id="msg"></div>
-  </form>
-
+</form>
 </div>
 
 <script>
-const scriptURL = 'https://script.google.com/macros/s/AKfycbxNWJyk4TE7QD0gak23mENmGUxVOoxZWKh0sL7W-pCRF-zyji9gGVNmsn4bL_gI5zTVmA/exec';
+const scriptURL = "https://script.google.com/macros/s/AKfycbxNWJyk4TE7QD0gak23mENmGUxVOoxZWKh0sL7W-pCRF-zyji9gGVNmsn4bL_gI5zTVmA/exec";
 const form = document.getElementById("guestForm");
 const msg = document.getElementById("msg");
 
-// Convert photo to Base64
-document.getElementById("photo").addEventListener("change", function () {
-  const reader = new FileReader();
-  reader.onloadend = () => {
-    document.getElementById("photoBase64").value = reader.result;
-  };
-  reader.readAsDataURL(this.files[0]);
-});
-
 form.addEventListener("submit", e => {
   e.preventDefault();
+  msg.innerHTML = "Submitting...";
 
-  fetch(scriptURL, { method: "POST", body: new FormData(form) })
-    .then(() => {
-      msg.style.color = "green";
-      msg.innerHTML = "Thank you! Registration successful.";
+  fetch(scriptURL,{
+    method:"POST",
+    body:new FormData(form)
+  })
+  .then(res=>res.json())
+  .then(data=>{
+    if(data.result==="success"){
+      msg.className="success";
+      msg.innerHTML="Registration Successful!";
       form.reset();
-      setTimeout(() => location.reload(), 3000);
-    })
-    .catch(() => {
-      msg.style.color = "red";
-      msg.innerHTML = "Something went wrong!";
-    });
+    }else{
+      msg.className="error";
+      msg.innerHTML="Upload failed";
+    }
+  })
+  .catch(()=>{
+    msg.className="error";
+    msg.innerHTML="Server error";
+  });
 });
 </script>
 
 </body>
 </html>
-
-
