@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>WeWorld Day | Grand Launching Ceremony</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="png.png" type="image/png">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #1d2671, #c33764);
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 520px;
+      background: #fff;
+      margin: 30px auto;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    }
+
+    .logo {
+      text-align: center;
+    }
+
+    .logo img {
+      max-width: 120px;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #c3a10b;
+      margin-bottom: 5px;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 18px;
+      margin-top: 0;
+      color: #444;
+    }
+
+    .event-info {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 14px;
+      color: #333;
+    }
+
+    label {
+      font-weight: bold;
+      margin-top: 10px;
+      display: block;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 20px;
+      padding: 12px;
+      background: #1d2671;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #c33764;
+    }
+
+    .success {
+      text-align: center;
+      font-weight: bold;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="logo">
+    <img src="logo.png.png" alt="WeWorld Logo">
+  </div>
+
+  <h1>WeWorld Marketing Pvt. Ltd.</h1>
+  <h2>Grand Launching Ceremony</h2>
+
+  <div class="event-info">
+    <h3>WeWorld Day</h3>
+    10th February, 2026<br>
+    Venue - Mohit Moitra Mancha Paikpara<br>
+    Kolkata - 700002<br>
+    Time: 10:30 AM to 02:30 PM
+  </div>
+
+  <!-- FORM -->
+  <form id="guestForm">
+
+    <label>Full Name *</label>
+    <input type="text" name="fullName" required>
+
+    <label>Gender *</label>
+    <select name="gender" required>
+      <option value="">Select</option>
+      <option>Male</option>
+      <option>Female</option>
+      <option>Other</option>
+    </select>
+
+    <label>Personal Rank *</label>
+    <select name="personalRank" required>
+      <option value="">Select</option>
+      <option>Ignite</option>
+      <option>Promoter</option>
+      <option>Champion</option>
+      <option>Ambassador</option>
+      <option>Entrepreneur</option>
+      <option>Grand Master</option>
+      <option>Legend</option>
+    </select>
+
+    <label>Address *</label>
+    <input type="text" name="address" required>
+
+    <label>WBO ID *</label>
+    <input type="text" name="WBO ID" required>
+
+    <label>Upline Name *</label>
+    <input type="text" name="Upline name" required>
+
+    <label>City / State *</label>
+    <input type="text" name="cityState" required>
+
+    <label>Ticket Product *</label>
+    <select name="ticketProduct" required>
+      <option value="">Select</option>
+      <option>1 WePower</option>
+    </select>
+
+    <label>Mobile Number</label>
+    <input type="tel" name="mobile">
+
+    <button type="submit">Submit</button>
+
+    <div class="success" id="msg"></div>
+  </form>
+
+</div>
+
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbzm3BEwIoJY5SCa0YTCE_PRa3L1uv0N3rwc1X1mhnASGJHwiwOrOut3ryd8QMAXnT93LA/exec'
+  const form = document.getElementById('guestForm')
+  const msg = document.getElementById('msg')
+  const btn = form.querySelector('button')
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    btn.disabled = true
+
+    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+      .then(() => {
+        msg.innerHTML = "Thank you for joining the WeWorld Day Event!"
+        msg.style.color = "green"
+        form.reset()
+
+        setTimeout(() => {
+          window.location.reload()
+        }, 3000)
+      })
+      .catch(() => {
+        msg.innerHTML = "Something went wrong. Please try again."
+        msg.style.color = "red"
+        btn.disabled = false
+      })
+  })
+</script>
+
+</body>
+</html>
